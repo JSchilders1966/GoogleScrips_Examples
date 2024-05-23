@@ -1,0 +1,39 @@
+<script>
+    function saveFile(f) {
+     var resetpass="no";
+     $('#mainForm').hide();
+     $('#spinner').show();
+     if ($('#resetpassword').is(":checked")){
+       resetpass="yes";
+     }
+  
+  
+      const file = f.files[0];
+      const fr = new FileReader();
+      fr.onload = function(e) {
+        const obj = {
+          resetpassword: resetpass,
+          filename: file.name,
+          mimeType: file.type,
+          bytes: [...new Int8Array(e.target.result)]
+        };
+        google.script.run.withSuccessHandler(uploadResponse).saveFile(obj);
+      };
+      fr.readAsArrayBuffer(file);
+    }
+    
+    function uploadResponse(e) {
+      if (e.error) {
+       $('#spinner').hide();
+       $('#result').html(e.error);
+       $('#output').show();
+       return
+      } else { 
+       $('#spinner').hide();
+       $('#result').html("Bestand is geupload en wordt vanavond verwerkt.");
+       $('#output').show();
+      } 
+    }
+  </script>
+  
+  
