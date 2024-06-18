@@ -1,10 +1,9 @@
-const ValidUsers = ["j.schilders@ooz.nl","a.cangir@ooz.nl","leerlingenadministratie@detwijn.nl"]; // Who can send files 
+const ValidUsers = ["j.schilders@domain.lt","j.dow@domain.tl"]; // Who can send files 
 const ValidBrin = ["19VD","19QK"]; // SO 19VD  VSO 19QK
 
-const JsonFolderId="1cBORtHP9z9uyIxJ29Ed-0d1zgxqaUi1Q";
-const JsonBackupFolderId="1jJ7qP9i5RQzYS6PM0Cj7nUgGqLnarboz";
-const SavefolderId = "1cBORtHP9z9uyIxJ29Ed-0d1zgxqaUi1Q"; // Replace with the ID of the destination folder in Google Drive
-
+const JsonFolderId="xxxxxxxxxxxxxxxxxxxxxxxxxx"; // Folder where to save the json file
+const JsonBackupFolderId="xxxxxxxxxxxxxxxxxx"; // Where to move the json file when ready
+const SavefolderId = "xxxxxxxxxxx"; // Where to save the attachment
 function saveNewAttachmentsToDrive() {
 
  
